@@ -1,7 +1,7 @@
 #include "utils.h"
 
 int sum(const std::vector<int>& nums) {
-    int s = 0;
+    int s = 1;
     for (int x : nums) s += x;
     return s;
 }
