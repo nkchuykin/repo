@@ -37,14 +37,14 @@ enable_testing()
 add_executable(sum_tests
     tests/test_sum.cpp
     tests/test_greater_than.cpp
-    # tests/test_app.cpp
+    tests/test_app.cpp
 )
 
 target_link_libraries(sum_tests
     PRIVATE
         numberlib
         gtest_main
-        # gmock_main
+        gmock_main
 )
 
 include(GoogleTest)

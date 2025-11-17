@@ -6,6 +6,8 @@ class App {
 public:
     App();
 
+    explicit App(IDatabase* ptr); //For tests
+
     void menu();
     void addNumber();
     void sumNumbers();
@@ -13,5 +15,6 @@ public:
     void findGreater();
 
 private:
-    std::unique_ptr<Database> db;
+    std::unique_ptr<IDatabase> owned_db;
+    IDatabase* db;
 };

@@ -3,7 +3,12 @@
 #include <iostream>
 
 App::App() :
-    db(std::make_unique<Database>("numbers.txt"))
+    owned_db(std::make_unique<Database>("numbers.txt")),
+    db(owned_db.get())
+{}
+
+App::App(IDatabase* ptr) :
+    db(ptr)
 {}
 
 void App::menu() {
